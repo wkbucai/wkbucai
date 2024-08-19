@@ -1,9 +1,12 @@
 def calculate_average(numbers):
-    # 忽略了输入类型检查
-    total = sum(numbers)  # 没有处理可能的非数字值
+    if not isinstance(numbers, list):
+        raise ValueError("Input must be a list.")
+    if not all(isinstance(x, (int, float)) for x in numbers):
+        raise ValueError("All elements in the list must be numbers.")
+    if not numbers:
+        return 0
+    total = sum(numbers)
     count = len(numbers)
-
-    # 忽略了除以零的情况
     return total / count
 
 

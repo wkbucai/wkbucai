@@ -1,10 +1,7 @@
 def calculate_average(numbers):
-    # 忽略了输入类型检查
-    total = sum(numbers)  # 没有处理可能的非数字值
-    count = len(numbers)
-
-    # 忽略了除以零的情况
-    return total / count
+    if not numbers:  # 检查列表是否为空
+        return 0
+    return sum(numbers) / len(numbers)
 
 
 def main():
